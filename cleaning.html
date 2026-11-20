@@ -1,70 +1,140 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fresh Start Cleaning &middot; sample website concept</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e9f8e'/%3E%3C/svg%3E">
-<style>:root{--bg:#f5fbfa;--ink:#0d2b33;--mute:#4e6a70;--line:#d6e8e6;--card:#ffffff;--alt:#e9f6f4;--hdr:rgba(245,251,250,.9);--acc:#0e9f8e;--acc2:#37c6b2;--onacc:#ffffff}
-*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
-body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit}.w{width:min(1120px,100% - 36px);margin-inline:auto}
-.wmbar{position:sticky;top:0;z-index:10001;background:#111;color:#fff;font-size:12.5px;text-align:center;padding:8px 14px;line-height:1.35}
-.wmbar a{color:#ffd24a}
-.wm{position:fixed;inset:0;z-index:10000;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='380' height='230'%3E%3Ctext x='24' y='125' transform='rotate(-24 190 115)' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='22' fill='%23888' fill-opacity='.30'%3ESAMPLE %C2%B7 Storefront Web Co.%3C/text%3E%3C/svg%3E");background-size:380px 230px}
-.chip{position:fixed;right:12px;bottom:12px;z-index:10002;background:#111;color:#fff;border-radius:99px;padding:10px 16px;font-size:12.5px;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.35)}
-header{position:sticky;top:34px;z-index:50;background:var(--hdr);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:62px;gap:14px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;letter-spacing:-.01em}.logo i{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--acc),var(--acc2))}
-nav{display:none;gap:26px}nav a{text-decoration:none;font-size:14px;font-weight:600;color:var(--mute)}nav a:hover{color:var(--ink)}@media(min-width:860px){nav{display:flex}}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 24px;border-radius:99px;font-weight:700;text-decoration:none;font-size:15px;border:1.5px solid transparent;transition:transform .15s,box-shadow .15s}
-.btn:hover{transform:translateY(-2px)}.btn.p{background:var(--acc);color:var(--onacc);box-shadow:0 12px 28px -12px var(--acc)}.btn.o{border-color:var(--ink);color:var(--ink)}.btn.s{padding:9px 18px;font-size:14px;background:var(--acc);color:var(--onacc)}.btn.big{padding:16px 32px;font-size:17px;margin-top:26px}
-.hero{padding:64px 0 54px;position:relative;overflow:hidden}.grid{display:grid;gap:36px;align-items:center}@media(min-width:900px){.grid{grid-template-columns:1.05fr .95fr}}
-.kick{font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
-h1{font-size:clamp(34px,6.4vw,66px);line-height:1.02;letter-spacing:-.03em;margin:14px 0 18px;font-weight:800}
-.sub{font-size:clamp(16px,2vw,19px);color:var(--mute);max-width:52ch}.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-.stage{perspective:1100px;height:380px;display:grid;place-items:center}
-.deck{position:relative;width:300px;height:300px;transform-style:preserve-3d;transition:transform .12s ease-out}
-.card{position:absolute;left:50%;top:50%;width:230px;padding:22px 20px;border-radius:20px;background:var(--card);border:1px solid var(--line);box-shadow:0 30px 50px -22px rgba(0,0,0,.45);display:flex;flex-direction:column;gap:6px}
-.card b{font-size:26px;letter-spacing:-.02em;line-height:1.1;color:var(--acc)}.card span{font-size:14px;color:var(--mute);font-weight:600}
-.c0{transform:translate(-50%,-50%) translate3d(-34px,-96px,70px)}.c1{transform:translate(-50%,-50%) translate3d(26px,0,10px)}.c2{transform:translate(-50%,-50%) translate3d(-26px,96px,-50px)}
-.ring{position:absolute;left:50%;top:50%;width:330px;height:330px;margin:-165px 0 0 -165px;border-radius:50%;border:2px dashed var(--acc);opacity:.35;transform:translateZ(-120px)}
-.sec{padding:76px 0}.sec.alt{background:var(--alt)}h2{font-size:clamp(28px,4.4vw,44px);letter-spacing:-.025em;line-height:1.08;font-weight:800}.lead{color:var(--mute);margin-top:10px;max-width:60ch}
-.svcs{display:grid;gap:16px;margin-top:34px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.svc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}.svc i{font-style:normal;font-size:28px;display:block;margin-bottom:10px}.svc h3{font-size:18px;margin-bottom:6px}.svc p{color:var(--mute);font-size:15px}
-.two{display:grid;gap:34px}@media(min-width:860px){.two{grid-template-columns:1.2fr .8fr}}
-.why{list-style:none;padding:0;margin-top:22px;display:grid;gap:12px}.why li{padding:16px 18px 16px 50px;position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;font-weight:600}
-.why li:before{content:"\2713";position:absolute;left:16px;top:14px;width:24px;height:24px;border-radius:50%;background:var(--acc);color:var(--onacc);display:grid;place-items:center;font-size:13px}
-.areas{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;align-self:start}.areas h3{margin-bottom:12px}.areas div{display:flex;flex-wrap:wrap;gap:8px}.areas span{padding:7px 13px;border-radius:99px;background:var(--alt);border:1px solid var(--line);font-size:14px;font-weight:600}
-.steps{display:grid;gap:16px;margin-top:34px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.step{padding:24px;border-radius:18px;border:1px dashed var(--line);background:var(--card)}
-.step em{font-style:normal;display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--acc);color:var(--onacc);font-weight:800;margin-bottom:12px}.step h3{margin-bottom:6px}.step p{color:var(--mute);font-size:15px}
-.cta{text-align:center;background:linear-gradient(135deg,var(--acc),var(--acc2));color:var(--onacc)}.cta .lead{color:inherit;opacity:.85;margin-inline:auto}
-.cbox{display:grid;gap:12px;margin:30px auto 0;max-width:720px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}.cbox div{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:16px;display:grid;gap:3px}.cbox b{font-size:12px;letter-spacing:.12em;text-transform:uppercase}.cta .btn.p{background:var(--ink);color:#fff;box-shadow:none}
-footer{padding:34px 0 80px;color:var(--mute);font-size:14px}.legal{margin-top:12px;font-size:12.5px;max-width:80ch}
-.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
-@media(max-width:560px){.stage{height:330px}.deck{width:260px}.card{width:200px}}
-</style></head><body>
-<div class="wmbar">Concept demo by Storefront Web Co. &middot; fictional business &middot; <a href="mailto:hogostudios2@gmail.com">hogostudios2@gmail.com</a></div>
-<header><div class="w nav"><a class="logo" href="#top"><i></i>Fresh Start Cleaning</a><nav><a href="#services">Services</a><a href="#why">Why us</a><a href="#how">How it works</a><a href="#contact">Contact</a></nav><a class="btn s" href="#contact">Get a quote</a></div></header>
-<main id="top">
-<section class="hero"><div class="w grid">
-<div><p class="kick">Concept demo · Etobicoke</p><h1>Come home to a fresh, sparkling space.</h1><p class="sub">A fictional local cleaning company to show what your website could look like.</p>
-<div class="ctas"><a class="btn p" href="#contact">Get a free quote</a><a class="btn o" href="#services">See services</a></div></div>
-<div class="stage" id="stage"><div class="deck" id="deck"><div class="card c0"><b>Weekly</b><span>or one-off</span></div><div class="card c1"><b>Insured</b><span>example badge</span></div><div class="card c2"><b>Local</b><span>friendly team</span></div><div class="ring"></div></div></div>
-</div></section>
-<section id="services" class="sec"><div class="w"><h2 class="rv">What we clean</h2><p class="lead rv">Example services based on what Fresh Start Cleaning offers. Your final list would come from you.</p><div class="svcs"><div class="svc rv"><i>🏠</i><h3>Home cleaning</h3><p>Regular or one-off cleans for the whole house.</p></div><div class="svc rv"><i>🔁</i><h3>Recurring visits</h3><p>Weekly, bi-weekly or monthly, whatever suits you.</p></div><div class="svc rv"><i>✨</i><h3>Deep cleaning</h3><p>A top-to-bottom reset for kitchens, baths and more.</p></div><div class="svc rv"><i>📦</i><h3>Move in / move out</h3><p>Leave it spotless or start fresh in a clean space.</p></div></div></div></section>
-<section id="why" class="sec alt"><div class="w two"><div><h2 class="rv">Why Fresh Start Cleaning</h2><ul class="why"><li class="rv">Instant quote request form</li><li class="rv">Clear service list and areas</li><li class="rv">Photos and reviews you control</li><li class="rv">Fast on phones, tablets and desktops</li></ul></div><div class="areas rv"><h3>Serving</h3><div><span>Etobicoke</span><span>Mississauga</span><span>West Toronto</span></div></div></div></section>
-<section id="how" class="sec"><div class="w"><h2 class="rv">Simple from start to sparkle</h2><div class="steps"><div class="step rv"><em>1</em><h3>Ask for a quote</h3><p>Tell us about your space and how often you&#x27;d like a clean.</p></div><div class="step rv"><em>2</em><h3>Pick your day</h3><p>Choose a time that suits you. One-off or recurring.</p></div><div class="step rv"><em>3</em><h3>Enjoy the result</h3><p>Come home to a fresh, tidy space.</p></div></div></div></section>
-<section id="contact" class="sec cta"><div class="w"><h2 class="rv">Let&#x27;s get your space sparkling</h2><p class="lead rv">Phone, hours and booking form would be set up with your real details.</p>
-<div class="cbox rv"><div><b>Phone</b><span>(your number here)</span></div><div><b>Hours</b><span>(your hours here)</span></div><div><b>Area</b><span>Etobicoke</span></div></div>
-<a class="btn p big" href="#top">Get a free quote</a></div></section>
-</main>
-<footer><div class="w"><p>&copy; Fresh Start Cleaning &middot; sample concept</p><p class="legal">Concept demo by Storefront Web Co. The business shown is fictional. Your site would use your real name, photos, hours and services.</p></div></footer>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Fresh Start Cleaning · sample website concept</title><meta name="description" content="A fictional local cleaning company in Etobicoke, made by Storefront Web Co. to show what your website could look like."><meta name="robots" content="noindex">
+<style>:root{--bg:#f3fbf9;--ink:#0e2a2a;--mute:#4f6b6a;--acc:#0e9f8e;--onacc:#fff;--line:rgba(14,42,42,.12);--card:#fff;--alt:#e4f5f1;--navbg:rgba(243,251,249,.8);--chip:rgba(14,159,142,.12);--glow:rgba(14,159,142,.14);--mqbg:#0e2a2a;--mqink:#f3fbf9}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+#pg{position:fixed;top:0;left:0;height:3px;width:0;background:var(--acc);z-index:99}
+.cbar{background:#111;color:#cfcfcf;text-align:center;font-size:12px;padding:7px 12px}.cbar a{color:#fff;text-decoration:underline}
+nav.top{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:20px;height:60px;padding:0 max(20px,calc((100vw - 1180px)/2));background:var(--navbg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);font-size:14px}
+nav.top .brand{font-weight:800;font-size:18px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.logo{width:26px;height:26px;border-radius:8px;background:var(--acc);display:inline-block}
+nav.top .links{display:flex;gap:26px;font-weight:600}nav.top .links a{opacity:.75;transition:opacity .2s}nav.top .links a:hover{opacity:1}
+.btn{display:inline-block;padding:14px 26px;border-radius:99px;font-weight:700;font-size:16px;background:var(--acc);color:var(--onacc);transition:transform .2s,filter .2s;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{transform:translateY(-2px) scale(1.02);filter:brightness(1.06)}
+.btn.o{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn.sm{padding:9px 18px;font-size:14px}
+.hero{position:relative;min-height:calc(100svh - 92px);display:flex;align-items:center;overflow:hidden;padding:60px max(20px,calc((100vw - 1180px)/2))}
+#gl{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero .in{position:relative;z-index:2;max-width:640px}
+.eyebrow{display:inline-block;padding:7px 14px;border-radius:99px;background:var(--chip);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:22px}
+h1{font-size:clamp(44px,8vw,92px);line-height:.98;font-weight:900;letter-spacing:-.04em}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}
+h1 .ln span{display:inline-block;transform:translateY(110%);animation:up 1s cubic-bezier(.2,.8,.2,1) forwards}
+h1 .ln:nth-child(2) span{animation-delay:.12s}h1 .ln:nth-child(3) span{animation-delay:.24s}
+h1 .ac{color:var(--acc)}
+@keyframes up{to{transform:none}}
+.sub{font-size:clamp(18px,2.4vw,22px);margin-top:22px;max-width:520px;opacity:0;animation:fade .9s .5s forwards;color:var(--mute)}
+.ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px;opacity:0;animation:fade .9s .65s forwards}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px;opacity:0;animation:fade .9s .8s forwards}
+.badges span{font-size:14px;font-weight:700;padding:9px 16px;border-radius:99px;background:var(--chip)}
+.badges span:before{content:"\2713";color:var(--acc);margin-right:8px}
+@keyframes fade{to{opacity:1}}
+.mq{overflow:hidden;white-space:nowrap;background:var(--mqbg);color:var(--mqink);padding:15px 0;font-size:19px;font-weight:800;letter-spacing:-.01em}
+.mq div{display:inline-block;animation:mq 28s linear infinite}.mq span{margin:0 24px}.mq span:after{content:"\2726";margin-left:48px;color:var(--acc)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.sec{padding:100px max(20px,calc((100vw - 1180px)/2))}.sec.alt{background:var(--alt)}
+.kick{font-size:14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
+h2{font-size:clamp(34px,5.4vw,60px);line-height:1.04;font-weight:900;letter-spacing:-.035em;max-width:16ch}
+.lead{margin-top:16px;max-width:560px;font-size:clamp(17px,2vw,20px);color:var(--mute)}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none}
+.grid{margin-top:50px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{position:relative;background:var(--card);border-radius:22px;padding:28px 24px;border:1px solid var(--line);overflow:hidden;transition:transform .25s ease-out,box-shadow .25s,border-color .25s;transform-style:preserve-3d}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(240px circle at var(--mx,50%) var(--my,0%),var(--glow),transparent 70%);opacity:0;transition:opacity .3s}
+.card:hover:before{opacity:1}.card:hover{box-shadow:0 20px 44px rgba(0,0,0,.14);border-color:var(--acc)}
+.card svg{width:44px;height:44px;stroke:var(--acc);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;position:relative}
+.card h3{font-size:22px;letter-spacing:-.02em;margin:18px 0 6px;position:relative}.card p{color:var(--mute);font-size:16px;position:relative}
+.note{margin-top:26px;font-size:13px;color:var(--mute)}
+.panel{margin-top:44px;display:grid;grid-template-columns:260px 1fr;gap:30px;align-items:start}
+.tabs{display:flex;flex-direction:column;gap:8px}
+.tabs button{text-align:left;font:inherit;font-size:18px;font-weight:700;padding:16px 20px;border-radius:16px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;transition:all .25s}
+.tabs button:hover{border-color:var(--acc)}.tabs button.on{background:var(--acc);color:var(--onacc);border-color:var(--acc);transform:translateX(6px)}
+.tabbody{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:34px;min-height:300px}
+.tabbody h3{font-size:30px;letter-spacing:-.03em;margin-bottom:6px}.tabbody>p{color:var(--mute);margin-bottom:22px}
+.tabbody ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tabbody li{padding:14px 16px 14px 46px;border-radius:14px;background:var(--alt);position:relative;font-weight:600;animation:pop .45s both}
+.tabbody li:before{content:"";position:absolute;left:16px;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:var(--acc)}
+.tabbody li:after{content:"";position:absolute;left:22px;top:50%;width:5px;height:9px;margin-top:-6px;border:solid var(--onacc);border-width:0 2px 2px 0;transform:rotate(45deg)}
+@keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.pts{list-style:none;margin-top:26px;display:grid;gap:12px}.pts li{padding:16px 18px 16px 52px;position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;font-weight:600}
+.pts li:before{content:"\2713";position:absolute;left:18px;top:14px;width:24px;height:24px;border-radius:50%;background:var(--acc);color:var(--onacc);display:grid;place-items:center;font-size:14px}
+.areas{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.areas span{padding:10px 18px;border-radius:99px;border:1px solid var(--line);background:var(--card);font-weight:700}
+.steps{margin-top:50px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.steps b{display:block;font-size:72px;font-weight:900;color:var(--acc);letter-spacing:-.05em;line-height:1}.steps h3{font-size:24px;margin:12px 0 6px;letter-spacing:-.02em}.steps p{color:var(--mute)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+form.f{display:grid;gap:12px}
+form.f label{font-size:13px;font-weight:700;color:var(--mute);display:grid;gap:6px}
+form.f input,form.f select,form.f textarea{font:inherit;font-size:16px;padding:14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+form.f input:focus,form.f select:focus,form.f textarea:focus{outline:2px solid var(--acc);border-color:transparent}
+#ok{display:none;font-size:14px;color:var(--acc);font-weight:700}
+table{width:100%;border-collapse:collapse;margin-top:26px}th,td{padding:14px 0;border-bottom:1px solid var(--line);text-align:left;font-weight:400}th{font-weight:700}td{text-align:right;color:var(--mute)}
+footer{padding:30px max(20px,calc((100vw - 1180px)/2)) 50px;font-size:12px;color:var(--mute);line-height:1.7;border-top:1px solid var(--line)}
+.callbar{display:none}
+@media(max-width:900px){nav.top .links{display:none}.grid{grid-template-columns:repeat(2,1fr)}.panel,.why,.contact,.steps{grid-template-columns:1fr}.tabs{flex-direction:row;overflow-x:auto;padding-bottom:6px}.tabs button{white-space:nowrap}.tabs button.on{transform:none}.tabbody ul{grid-template-columns:1fr}.sec{padding:72px 20px}.hero{padding:40px 20px;align-items:flex-end;min-height:calc(100svh - 92px)}.callbar{display:block;position:fixed;left:14px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:70;text-align:center;padding:15px;border-radius:99px;background:var(--acc);color:var(--onacc);font-weight:800;box-shadow:0 10px 30px rgba(0,0,0,.3)}footer{padding-bottom:100px}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}h1 .ln span{transform:none}.sub,.ctas,.badges{opacity:1}.rv{opacity:1;transform:none}.mq div{animation:none}}
+h1 b{font-weight:inherit}
+.calc{margin-top:44px;display:grid;grid-template-columns:1.25fr .75fr;gap:20px}.ctrl{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:12px 28px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid var(--line);font-weight:700;font-size:18px}.row:last-child{border:0}.row.col{flex-direction:column;align-items:flex-start}
+.step{display:flex;align-items:center;gap:16px}.step button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--alt);font-size:22px;cursor:pointer;color:var(--ink);transition:all .2s}.step button:hover{background:var(--acc);color:#fff;border-color:var(--acc)}.step b{min-width:26px;text-align:center;font-size:26px}
+.seg{display:flex;gap:8px;flex-wrap:wrap}.seg button{font:inherit;font-weight:700;font-size:15px;padding:11px 18px;border-radius:99px;border:1px solid var(--line);background:var(--alt);color:var(--ink);cursor:pointer;transition:all .25s}.seg button:hover{border-color:var(--acc)}.seg button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.out{background:#0e2a2a;color:#f3fbf9;border-radius:24px;padding:34px 30px;display:flex;flex-direction:column;justify-content:center;gap:10px;position:relative;overflow:hidden}.out:after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.35),rgba(14,159,142,.25) 60%,transparent 70%)}
+.out small{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9fd8d0}.out strong{font-size:clamp(64px,9vw,104px);font-weight:900;letter-spacing:-.05em;line-height:1}.out p{color:#b8d8d4;min-height:48px}.out .btn{margin-top:8px;align-self:flex-start;position:relative;z-index:1;background:#ffc933;color:#0e2a2a}
+@media(max-width:900px){.calc{grid-template-columns:1fr}.ctrl{padding:6px 20px}}
+</style></head><body><div id="pg"></div>
+<div class="cbar">Concept demo by <a href="index.html">Storefront Web Co.</a> · fictional business · hogostudios2@gmail.com</div>
+<nav class="top"><a class="brand" href="#top"><i class="logo"></i>Fresh Start Cleaning</a><div class="links"><a href="#services">Services</a><a href="#estimate">Estimate</a><a href="#why">Why us</a><a href="#how">How it works</a><a href="#contact">Contact</a></div><a class="btn sm" href="#contact">Get a quote</a></nav>
+<header class="hero" id="top"><canvas id="gl" aria-hidden="true"></canvas><div class="in"><span class="eyebrow">Concept demo · Etobicoke</span><h1><span class="ln"><span>Come home to</span></span><span class="ln"><span>a fresh,</span></span><span class="ln"><span><b class="ac">sparkling space.</b></span></span></h1><p class="sub">A fictional local cleaning company, made to show what your website could look like.</p>
+<div class="ctas"><a class="btn" href="#contact">Get a free quote</a><a class="btn o" href="#services">See services</a></div><div class="badges"><span>Weekly or one-off</span><span>Insured (example badge)</span><span>Local friendly team</span></div></div></header>
+<div class="mq" aria-hidden="true"><div><span>Home cleaning</span><span>Recurring visits</span><span>Deep cleaning</span><span>Move in / move out</span><span>Eco-friendly products</span><span>Free quotes</span><span>Home cleaning</span><span>Recurring visits</span><span>Deep cleaning</span><span>Move in / move out</span><span>Eco-friendly products</span><span>Free quotes</span><span>Home cleaning</span><span>Recurring visits</span><span>Deep cleaning</span><span>Move in / move out</span><span>Eco-friendly products</span><span>Free quotes</span><span>Home cleaning</span><span>Recurring visits</span><span>Deep cleaning</span><span>Move in / move out</span><span>Eco-friendly products</span><span>Free quotes</span></div></div>
+<section class="sec" id="services"><p class="kick rv">Services</p><h2 class="rv">What we clean.</h2><p class="lead rv">Example services based on what a local cleaner might offer. Your final list would come from you.</p><div class="grid"><div class="card rv" data-d="0"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 22L24 8l17 14"/><path d="M12 20v20h24V20"/><path d="M20 40V28h8v12"/></svg><h3>Home cleaning</h3><p>Regular or one-off cleans for the whole house.</p></div><div class="card rv" data-d="90"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 20v-4a6 6 0 0 1 6-6h18l-5-5M38 28v4a6 6 0 0 1-6 6H14l5 5"/></svg><h3>Recurring visits</h3><p>Weekly, bi-weekly or monthly, whatever suits you.</p></div><div class="card rv" data-d="180"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6l4 12 12 4-12 4-4 12-4-12-12-4 12-4z"/><path d="M38 8v6M35 11h6"/></svg><h3>Deep cleaning</h3><p>A top-to-bottom reset for kitchens, baths and more.</p></div><div class="card rv" data-d="270"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 15l17-8 17 8v18l-17 8-17-8z"/><path d="M7 15l17 8 17-8M24 23v18"/></svg><h3>Move in / move out</h3><p>Leave it spotless or start fresh in a clean space.</p></div></div></section>
+<section class="sec alt" id="estimate"><p class="kick rv">Instant estimate</p><h2 class="rv">Get a price in seconds.</h2><p class="lead rv">Tell us about your space and see a ballpark right away.</p>
+<div class="calc rv"><div class="ctrl">
+<div class="row"><span>Bedrooms</span><div class="step"><button type="button" data-k="bed" data-d="-1" aria-label="Fewer bedrooms">&minus;</button><b id="bed">2</b><button type="button" data-k="bed" data-d="1" aria-label="More bedrooms">+</button></div></div>
+<div class="row"><span>Bathrooms</span><div class="step"><button type="button" data-k="bath" data-d="-1" aria-label="Fewer bathrooms">&minus;</button><b id="bath">1</b><button type="button" data-k="bath" data-d="1" aria-label="More bathrooms">+</button></div></div>
+<div class="row col"><span>Type of clean</span><div class="seg" data-g="type"><button type="button" class="on" data-v="1">Standard</button><button type="button" data-v="1.6">Deep clean</button><button type="button" data-v="1.9">Move in / out</button></div></div>
+<div class="row col"><span>How often</span><div class="seg" data-g="freq"><button type="button" class="on" data-v="0">One-off</button><button type="button" data-v="0.05">Monthly</button><button type="button" data-v="0.12">Bi-weekly</button><button type="button" data-v="0.2">Weekly</button></div></div>
+</div><div class="out"><small>Your estimate per visit</small><strong id="est">$0</strong><p id="estn"></p><a class="btn" href="#contact">Book this clean</a></div></div>
+<p class="note">Sample pricing for this concept. A real site would use the owner's own rates, and an online estimate is not a binding quote.</p></section>
+<section class="sec" id="why"><div class="why"><div><p class="kick rv">Why Fresh Start Cleaning</p><h2 class="rv">Simple, honest cleaning.</h2><ul class="pts"><li class="rv" data-d="0">Instant quote request form</li><li class="rv" data-d="80">Clear service list and areas</li><li class="rv" data-d="160">Photos and reviews you control</li><li class="rv" data-d="240">Fast on phones, tablets and desktops</li></ul></div><div class="rv"><p class="kick">Serving</p><div class="areas"><span>Etobicoke</span><span>Mississauga</span><span>West Toronto</span></div><p class="lead" style="margin-top:24px">Example service area. Yours would match where your customers really are.</p></div></div></section>
+<section class="sec alt" id="how"><p class="kick rv">How it works</p><h2 class="rv">Simple from start to sparkle.</h2><div class="steps"><div class="rv" data-d="0"><b>01</b><h3>Ask for a quote</h3><p>Tell us about your space and how often you&#x27;d like a clean.</p></div><div class="rv" data-d="100"><b>02</b><h3>Pick your day</h3><p>Choose a time that suits you. One-off or recurring.</p></div><div class="rv" data-d="200"><b>03</b><h3>Enjoy the result</h3><p>Come home to a fresh, tidy space.</p></div></div></section>
+<section class="sec" id="contact"><div class="contact"><div class="rv"><p class="kick">Contact</p><h2>Let&#x27;s get your space sparkling.</h2><p class="lead">Phone, hours and the form would be set up with your real details.</p>
+<table><tr><th>Phone</th><td>(your number here)</td></tr><tr><th>Hours</th><td>(your hours here)</td></tr><tr><th>Area</th><td>Etobicoke</td></tr></table></div>
+<form class="f rv" id="form"><label>Name<input required></label><label>Phone or email<input required></label><label>Type of clean<select><option>Home cleaning</option><option>Recurring visits</option><option>Deep cleaning</option><option>Move in / move out</option></select></label><label>Details (optional)<textarea rows="3"></textarea></label><button class="btn" type="submit">Get a free quote</button><p id="ok">Thanks! Concept only: this form isn't connected yet. On a real site it would go straight to the owner's phone and email.</p></form></div></section>
+<footer>© Fresh Start Cleaning · sample concept<br>Concept demo by <a href="index.html" style="text-decoration:underline">Storefront Web Co.</a> The business shown is fictional. Your site would use your real name, photos, hours and services.</footer>
+<a class="callbar" href="#contact">Get a quote</a>
+<script src="three.min.js"></script><script>
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches,coarse=matchMedia('(pointer:coarse)').matches||innerWidth<800;
+var pg=document.getElementById('pg');function prog(){var h=document.documentElement;pg.style.width=(scrollY/(h.scrollHeight-innerHeight)*100)+'%'}addEventListener('scroll',prog,{passive:true});prog();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var d=e.target.dataset.d||0;setTimeout(function(){e.target.classList.add('in')},d);io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+document.querySelectorAll('.card').forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%');if(!rm)c.style.transform='perspective(800px) rotateY('+(x-.5)*7+'deg) rotateX('+(.5-y)*7+'deg) translateY(-3px)'});c.addEventListener('mouseleave',function(){c.style.transform=''})});
+var fm=document.getElementById('form');if(fm)fm.addEventListener('submit',function(e){e.preventDefault();document.getElementById('ok').style.display='block'});
+var mx=0,my=0,sv=0,ls=scrollY;addEventListener('pointermove',function(e){mx=e.clientX/innerWidth*2-1;my=-(e.clientY/innerHeight*2-1)},{passive:true});
+addEventListener('deviceorientation',function(e){if(e.gamma!=null&&coarse){mx=Math.max(-1,Math.min(1,e.gamma/35));my=Math.max(-1,Math.min(1,-(e.beta-50)/45))}});
+function setupGL(build){var cv=document.getElementById('gl'),R;try{R=new THREE.WebGLRenderer({canvas:cv,antialias:!coarse,alpha:true})}catch(e){R=null}if(!R||typeof THREE==='undefined'){cv.style.display='none';return}
+R.setPixelRatio(Math.min(devicePixelRatio,coarse?1.5:2));var sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(36,1,.1,60);cam.position.z=9;
+var api=build(sc,cam,coarse),vis=true;document.addEventListener('visibilitychange',function(){vis=!document.hidden});
+function size(){var h=cv.parentNode,w=h.clientWidth,ht=h.clientHeight;R.setSize(w,ht,false);cam.aspect=w/ht;cam.updateProjectionMatrix();api.resize&&api.resize(w/ht)}addEventListener('resize',size);size();
+var clk=new THREE.Clock();function fr(){requestAnimationFrame(fr);if(!vis)return;var dt=Math.min(clk.getDelta(),.05),v=Math.abs(scrollY-ls);ls=scrollY;sv+=(Math.min(v*.05,2)-sv)*.1;api.frame(dt,clk.elapsedTime,mx,my,sv);R.render(sc,cam)}
+if(rm){api.frame(0.016,1,0,0,0);R.render(sc,cam)}else fr()}
 
-<script>
-(function(){var s=document.getElementById('stage'),k=document.getElementById('deck');if(!s)return;var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
-var ax=-8,ay=18,t=0;function set(x,y){k.style.transform='rotateX('+x+'deg) rotateY('+y+'deg)'}set(ax,ay);
-s.addEventListener('pointermove',function(e){var r=s.getBoundingClientRect();var px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;set(-py*22,px*34)});
-s.addEventListener('pointerleave',function(){set(ax,ay)});
-if(!rm){(function f(){t+=.012;if(!s.matches(':hover'))set(ax+Math.sin(t)*4,ay+Math.cos(t*.8)*8);requestAnimationFrame(f)})()}
-var io=new IntersectionObserver(function(a){a.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
-document.querySelectorAll('.rv').forEach(function(x){io.observe(x)});})();
+var S={bed:2,bath:1,type:1,freq:0},cur=0,estEl=document.getElementById('est');
+function calc(){var base=70+S.bed*28+S.bath*34,p=Math.round(base*S.type*(1-S.freq)/5)*5;var from=cur,st=performance.now();function an(n){var k=Math.min(1,(n-st)/500),v=Math.round(from+(p-from)*(1-Math.pow(1-k,3)));estEl.textContent='$'+v;if(k<1)requestAnimationFrame(an);else cur=p}requestAnimationFrame(an);
+ var ty=S.type>1.7?'move-in / move-out clean':S.type>1?'deep clean':'standard clean',fr=S.freq>=.2?'weekly':S.freq>=.12?'every two weeks':S.freq>=.05?'monthly':'one visit';
+ document.getElementById('estn').textContent=S.bed+' bed, '+S.bath+' bath · '+ty+' · '+fr}
+document.querySelectorAll('.step button').forEach(function(b){b.onclick=function(){var k=b.dataset.k,max=k==='bed'?6:5;S[k]=Math.max(1,Math.min(max,S[k]+ +b.dataset.d));document.getElementById(k).textContent=S[k];calc()}});
+document.querySelectorAll('.seg').forEach(function(g){g.querySelectorAll('button').forEach(function(b){b.onclick=function(){g.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');S[g.dataset.g]=+b.dataset.v;calc()}})});calc();
+setupGL(function(sc,cam,coarse){
+ var U={t:{value:0}},mat=new THREE.ShaderMaterial({transparent:true,depthWrite:false,uniforms:U,vertexShader:'varying vec3 vN;varying vec3 vV;void main(){vN=normalize(normalMatrix*normal);vec4 mv=modelViewMatrix*vec4(position,1.);vV=normalize(-mv.xyz);gl_Position=projectionMatrix*mv;}',fragmentShader:'uniform float t;varying vec3 vN;varying vec3 vV;void main(){vec3 n=normalize(vN);float f=1.-max(dot(n,normalize(vV)),0.);vec3 irid=mix(vec3(.45,.9,.85),vec3(1.,.88,.45),.5+.5*sin(f*5.+t*.4));float hl=pow(max(dot(n,normalize(vec3(.4,.6,.7))),0.),48.);gl_FragColor=vec4(mix(vec3(1.),irid,.65)*(.75+.25*f)+hl,pow(f,2.3)*.9+.06+hl*.7);}'});
+ var geo=new THREE.SphereGeometry(1,coarse?24:40,coarse?18:28),B=[],n=coarse?18:32;
+ for(var i=0;i<n;i++){var m=new THREE.Mesh(geo,mat),r=.18+Math.pow(Math.random(),2)*.8;m.scale.setScalar(r);m.position.set((Math.random()-.5)*15,(Math.random()-.5)*11,-3+Math.random()*5);m.userData={s:.25+Math.random()*.5,p:Math.random()*6.28,r:r};sc.add(m);B.push(m)}
+ var cv=document.createElement('canvas');cv.width=cv.height=64;var cx=cv.getContext('2d');cx.fillStyle='#fff';cx.beginPath();cx.moveTo(32,2);cx.quadraticCurveTo(32,32,62,32);cx.quadraticCurveTo(32,32,32,62);cx.quadraticCurveTo(32,32,2,32);cx.quadraticCurveTo(32,32,32,2);cx.fill();
+ var tx=new THREE.CanvasTexture(cv),N=coarse?22:40,pp=new Float32Array(N*3);for(var s=0;s<N;s++)pp.set([(Math.random()-.5)*14,(Math.random()-.5)*10,Math.random()*3-1],s*3);
+ var sg=new THREE.BufferGeometry();sg.setAttribute('position',new THREE.BufferAttribute(pp,3));var sm=new THREE.PointsMaterial({map:tx,color:0xffc933,size:.38,transparent:true,depthWrite:false,opacity:.9});var spk=new THREE.Points(sg,sm);sc.add(spk);
+ return{frame:function(dt,t,mx,my,sv){U.t.value=t;B.forEach(function(b){var d=b.userData;b.position.y+=d.s*dt*(1+sv*3);b.position.x+=Math.sin(t*.6+d.p)*.003;if(b.position.y>6.5+d.r){b.position.y=-6.5-d.r;b.position.x=(Math.random()-.5)*15}});
+  for(var s=0;s<N;s++){pp[s*3+1]+=dt*.35*(1+sv*2);if(pp[s*3+1]>5.5)pp[s*3+1]=-5.5}sg.attributes.position.needsUpdate=true;sm.opacity=.65+.3*Math.sin(t*2.4);
+  cam.position.x+=(mx*.9-cam.position.x)*.05;cam.position.y+=(my*.5-cam.position.y)*.05;cam.lookAt(0,0,0)}}
+});
 </script></body></html>
